@@ -1,0 +1,13 @@
+*.exe
+*.dll
+[Bb]in/
+[Oo]bj/
+*.suo
+*~
+_ReSharper*/
+*.resharper
+packages/
+*.nupkg
+*.pidb
+*.userprefs
+Ankh.NoLoad

@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Prueba";
+}
+
+<h2>Irony test</h2>
+
+<form>
+    <label for="txtExpression">Expresi&oacute;n: </label><br />
+    <textarea id="txtExpression" name="txtExpression" rows="15" cols="50"></textarea>
+    <input type="button" id="btnSubmit" value="Calcular" /><br />
+    <label id="lblResults"></label>
+</form>
+
+@section Scripts {
+
+<script type="text/javascript">
+    $(function () {
+        $('#btnSubmit').click(function () {
+            $.ajax({
+                url: '@Url.Action("ParseAndEvaluate", "Calculator")',
+                type: 'POST',
+                dataType: 'json',
+                contentType: 'application/json',
+                data: JSON.stringify({ expression: $.trim($('#txtExpression').val()) }),
+                processData: false,
+                success: function (result) {
+                    if (result.Success) {
+                        $('#lblResults').text('Resultado: ' + result.Result.toString());
+                    } else {
+                        $('#lblResults').text('Error al parsear la expresión: ' + result.Result);
+                    }
+                    
+                }
+            })
+        });
+    });
+</script>
+
+}
+
