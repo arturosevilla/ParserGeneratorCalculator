@@ -98,9 +98,11 @@
     <Compile Include="Models\AST\AssignmentExpression.cs" />
     <Compile Include="Models\AST\BaseAST.cs" />
     <Compile Include="Models\AST\BinaryExpression.cs" />
+    <Compile Include="Models\AST\BooleanExpression.cs" />
     <Compile Include="Models\AST\DeclarationStatement.cs" />
     <Compile Include="Models\AST\Expression.cs" />
     <Compile Include="Models\AST\IdentifierExpression.cs" />
+    <Compile Include="Models\AST\IfStatement.cs" />
     <Compile Include="Models\AST\InitializationStatement.cs" />
     <Compile Include="Models\AST\NumberExpression.cs" />
     <Compile Include="Models\AST\StatementList.cs" />
