@@ -39,6 +39,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -95,20 +99,6 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CalculatorController.cs" />
-    <Compile Include="Models\AST\AssignmentExpression.cs" />
-    <Compile Include="Models\AST\BaseAST.cs" />
-    <Compile Include="Models\AST\BinaryExpression.cs" />
-    <Compile Include="Models\AST\BooleanExpression.cs" />
-    <Compile Include="Models\AST\DeclarationStatement.cs" />
-    <Compile Include="Models\AST\Expression.cs" />
-    <Compile Include="Models\AST\IdentifierExpression.cs" />
-    <Compile Include="Models\AST\IfStatement.cs" />
-    <Compile Include="Models\AST\InitializationStatement.cs" />
-    <Compile Include="Models\AST\NumberExpression.cs" />
-    <Compile Include="Models\AST\StatementList.cs" />
-    <Compile Include="Models\Environment.cs" />
-    <Compile Include="Models\Errors\GrammarException.cs" />
-    <Compile Include="Models\EvaluationResult.cs" />
     <Compile Include="Models\ExpressionDTO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -130,9 +120,13 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Irony\010.Irony.2012.csproj">
-      <Project>{d81f5c91-d7db-46e5-bc99-49488fb6814c}</Project>
-      <Name>010.Irony.2012</Name>
+    <ProjectReference Include="..\EvaluationGrammar\EvaluationGrammar.csproj">
+      <Project>{81cef36e-d3e1-4e69-aabc-ed024935d2fd}</Project>
+      <Name>EvaluationGrammar</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IronyGrammar\IronyParser.csproj">
+      <Project>{fc6714fe-81b0-4dc1-9a90-973d9070862c}</Project>
+      <Name>IronyParser</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

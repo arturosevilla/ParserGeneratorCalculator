@@ -2,14 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Irony.Ast;
-using Irony.Parsing;
 
-namespace IronyTest.Models.AST
+
+namespace EvaluationGrammar.AST
 {
-    public class DeclarationStatement : BaseAST
+    public abstract class BaseDeclarationStatement : BaseAST
     {
         private string variable;
+
+        protected void SetValue(string variableName)
+        {
+            variable = variableName;
+        }
 
         public override EvaluationResult Evaluate(Environment env)
         {
@@ -17,9 +21,5 @@ namespace IronyTest.Models.AST
             return null;
         }
 
-        public override void Init(AstContext context, ParseTreeNode parseNode)
-        {
-            variable = parseNode.ChildNodes[1].FindTokenAndGetText();
-        }
     }
 }

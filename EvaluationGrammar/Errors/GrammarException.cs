@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace IronyTest.Models.Errors
+namespace EvaluationGrammar.Errors
 {
     public class GrammarException : Exception
     {

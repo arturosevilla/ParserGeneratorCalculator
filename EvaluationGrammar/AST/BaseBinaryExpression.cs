@@ -2,17 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Irony.Ast;
-using Irony.Parsing;
 
-namespace IronyTest.Models.AST
+namespace EvaluationGrammar.AST
 {
-    public class BinaryExpression : Expression
+    public abstract class BaseBinaryExpression : Expression
     {
         private string Operator;
         private Expression Left;
         private Expression Right;
         private delegate int BooleanOperator(int a, int b);
+
+        protected void SetValues(string operator_, Expression left, Expression right)
+        {
+            Operator = operator_;
+            Left = left;
+            Right = right;
+        }
 
 
         private int Sum(int a, int b)
@@ -69,12 +74,5 @@ namespace IronyTest.Models.AST
             };
         }
 
-
-        public override void Init(AstContext context, ParseTreeNode parseNode)
-        {
-            Operator = parseNode.ChildNodes[1].FindTokenAndGetText();
-            Left = parseNode.ChildNodes[0].AstNode as Expression;
-            Right = parseNode.ChildNodes[2].AstNode as Expression;
-        }
     }
 }

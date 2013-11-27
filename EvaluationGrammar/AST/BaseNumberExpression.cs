@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Irony.Ast;
-using Irony.Parsing;
 
-namespace IronyTest.Models.AST {
-    public class NumberExpression : Expression {
+namespace EvaluationGrammar.AST {
+    public abstract class BaseNumberExpression : Expression {
         private int value;
 
         public override EvaluationResult Evaluate(Environment env)
@@ -16,9 +14,10 @@ namespace IronyTest.Models.AST {
             };
         }
 
-        public override void Init(AstContext context, ParseTreeNode parseNode)
+        protected void SetValue(int value)
         {
-            value = int.Parse(parseNode.Token.ValueString);
+            this.value = value;
         }
+
     }
 }

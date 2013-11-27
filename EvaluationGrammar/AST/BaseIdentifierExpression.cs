@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Irony.Ast;
-using Irony.Parsing;
 
-namespace IronyTest.Models.AST
+namespace EvaluationGrammar.AST
 {
-    public class IdentifierExpression : Expression
+    public abstract class BaseIdentifierExpression : Expression
     {
         private string variable;
+
+        protected void SetValue(string variable)
+        {
+            this.variable = variable;
+        }
 
         public override EvaluationResult Evaluate(Environment env)
         {
@@ -18,9 +21,9 @@ namespace IronyTest.Models.AST
             };
         }
 
-        public override void Init(AstContext context, ParseTreeNode parseNode)
+        public string GetIdentifierSymbol()
         {
-            variable = parseNode.Token.ValueString;
+            return variable;
         }
 
         public void AssignValue(Environment env, EvaluationResult evaluationResult)

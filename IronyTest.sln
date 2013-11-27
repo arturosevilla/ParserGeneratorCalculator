@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2013 for Web
-VisualStudioVersion = 12.0.21005.1
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IronyTest", "IronyTest\IronyTest.csproj", "{BE89D1C0-4231-4D42-9D45-BDB5C92CA2A4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "010.Irony.2012", "Irony\010.Irony.2012.csproj", "{D81F5C91-D7DB-46E5-BC99-49488FB6814C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IronyParser", "IronyGrammar\IronyParser.csproj", "{FC6714FE-81B0-4DC1-9A90-973D9070862C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvaluationGrammar", "EvaluationGrammar\EvaluationGrammar.csproj", "{81CEF36E-D3E1-4E69-AABC-ED024935D2FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,14 @@ Global
 		{D81F5C91-D7DB-46E5-BC99-49488FB6814C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D81F5C91-D7DB-46E5-BC99-49488FB6814C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D81F5C91-D7DB-46E5-BC99-49488FB6814C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC6714FE-81B0-4DC1-9A90-973D9070862C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC6714FE-81B0-4DC1-9A90-973D9070862C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC6714FE-81B0-4DC1-9A90-973D9070862C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC6714FE-81B0-4DC1-9A90-973D9070862C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81CEF36E-D3E1-4E69-AABC-ED024935D2FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81CEF36E-D3E1-4E69-AABC-ED024935D2FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81CEF36E-D3E1-4E69-AABC-ED024935D2FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81CEF36E-D3E1-4E69-AABC-ED024935D2FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
