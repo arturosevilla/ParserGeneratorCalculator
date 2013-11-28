@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2FDDF180-CA13-4681-80ED-5BD109A7FD70}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AntlrGrammar</RootNamespace>
+    <AssemblyName>AntlrGrammar</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>AntlrTool\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AST\AssignmentExpression.cs" />
+    <Compile Include="AST\BinaryExpression.cs" />
+    <Compile Include="AST\BlockStatement.cs" />
+    <Compile Include="AST\BooleanExpression.cs" />
+    <Compile Include="AST\DeclarationStatement.cs" />
+    <Compile Include="AST\IdentifierExpression.cs" />
+    <Compile Include="AST\IfStatement.cs" />
+    <Compile Include="AST\InitializationStatement.cs" />
+    <Compile Include="AST\NumberExpression.cs" />
+    <Compile Include="Parser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AntlrTool\Antlr3.exe.config" />
+    <None Include="AntlrTool\Antlr3.targets" />
+    <None Include="AntlrTool\Codegen\Templates\CSharp2\AST.stg" />
+    <None Include="AntlrTool\Codegen\Templates\CSharp2\ASTDbg.stg" />
+    <None Include="AntlrTool\Codegen\Templates\CSharp2\ASTParser.stg" />
+    <None Include="AntlrTool\Codegen\Templates\CSharp2\ASTTreeParser.stg" />
+    <None Include="AntlrTool\Codegen\Templates\CSharp2\CSharp2.stg" />
+    <None Include="AntlrTool\Codegen\Templates\CSharp2\Dbg.stg" />
+    <None Include="AntlrTool\Codegen\Templates\CSharp2\ST.stg" />
+    <None Include="AntlrTool\Codegen\Templates\CSharp3\AST.stg" />
+    <None Include="AntlrTool\Codegen\Templates\CSharp3\ASTDbg.stg" />
+    <None Include="AntlrTool\Codegen\Templates\CSharp3\ASTParser.stg" />
+    <None Include="AntlrTool\Codegen\Templates\CSharp3\ASTTreeParser.stg" />
+    <None Include="AntlrTool\Codegen\Templates\CSharp3\CSharp3.stg" />
+    <None Include="AntlrTool\Codegen\Templates\CSharp3\Dbg.stg" />
+    <None Include="AntlrTool\Codegen\Templates\CSharp3\ST.stg" />
+    <None Include="AntlrTool\Codegen\Templates\LeftRecursiveRules.stg" />
+    <None Include="AntlrTool\Tool\Templates\depend.stg" />
+    <None Include="AntlrTool\Tool\Templates\dot\dot.stg" />
+    <None Include="AntlrTool\Tool\Templates\messages\formats\antlr.stg" />
+    <None Include="AntlrTool\Tool\Templates\messages\formats\vs2005.stg" />
+    <None Include="AntlrTool\Tool\Templates\messages\languages\en.stg" />
+    <Antlr3 Include="ASTGenerator.g">
+      <Generator>MSBuild:Compile</Generator>
+    </Antlr3>
+    <Antlr3 Include="EvaluationGrammar.g">
+      <Generator>MSBuild:Compile</Generator>
+    </Antlr3>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EvaluationGrammar\EvaluationGrammar.csproj">
+      <Project>{81cef36e-d3e1-4e69-aabc-ed024935d2fd}</Project>
+      <Name>EvaluationGrammar</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AntlrTool\Antlr3.exe" />
+    <Content Include="AntlrTool\Antlr3.Runtime.Debug.dll" />
+    <Content Include="AntlrTool\Antlr3.Runtime.dll" />
+    <Content Include="AntlrTool\Antlr4.StringTemplate.dll" />
+    <Content Include="AntlrTool\Antlr4.StringTemplate.Visualizer.dll" />
+    <Content Include="AntlrTool\AntlrBuildTask.dll" />
+    <Content Include="AntlrTool\LICENSE.txt" />
+    <Content Include="AntlrTool\Targets\Antlr3.Targets.CSharp2.dll" />
+    <Content Include="AntlrTool\Targets\Antlr3.Targets.CSharp3.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <!-- Folder containing AntlrBuildTask.dll -->
+    <AntlrBuildTaskPath>$(ProjectDir)\AntlrTool</AntlrBuildTaskPath>
+    <!-- Path to the ANTLR Tool itself. -->
+    <AntlrToolPath>$(ProjectDir)\AntlrTool\Antlr3.exe</AntlrToolPath>
+  </PropertyGroup>
+  <Import Project="$(ProjectDir)\AntlrTool\Antlr3.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

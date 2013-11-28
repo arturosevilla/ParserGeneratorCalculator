@@ -6,7 +6,7 @@ using GrammarEnvironment = EvaluationGrammar.Environment;
 using EvaluationGrammar.Errors;
 
 
-namespace IronyTest.Models
+namespace ParserGeneratorTest.Models
 {
     class ExpressionEvaluator
     {
@@ -23,7 +23,7 @@ namespace IronyTest.Models
 
         public int? Evaluate()
         {
-            var ast = new IronyParser.Parser().Parse(expression);
+            var ast = new AntlrParser.Parser().Parse(expression);
             
             ast.Evaluate(env);
             try {

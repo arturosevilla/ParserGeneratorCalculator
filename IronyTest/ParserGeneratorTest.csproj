@@ -120,6 +120,10 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AntlrGrammar\AntlrParser.csproj">
+      <Project>{2fddf180-ca13-4681-80ed-5bd109a7fd70}</Project>
+      <Name>AntlrParser</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EvaluationGrammar\EvaluationGrammar.csproj">
       <Project>{81cef36e-d3e1-4e69-aabc-ed024935d2fd}</Project>
       <Name>EvaluationGrammar</Name>
