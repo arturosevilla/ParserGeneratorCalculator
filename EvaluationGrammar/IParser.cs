@@ -10,5 +10,7 @@ namespace EvaluationGrammar
     public interface IParser
     {
         BaseAST Parse(string code);
+        string Name { get; }
+        Guid Id { get; } 
     }
 }

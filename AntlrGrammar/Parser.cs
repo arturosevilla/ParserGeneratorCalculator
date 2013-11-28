@@ -29,5 +29,16 @@ namespace AntlrParser
             var astGenerator = new ASTGenerator(nodes);
             return astGenerator.getAST();
         }
+
+        public string Name
+        {
+            get { return "ANTLR Parser"; }
+        }
+
+        public Guid Id
+        {
+            get { return new Guid("BA497A10-BBDD-43BA-B4A1-64C516FBFB50"); }
+
+        }
     }
 }

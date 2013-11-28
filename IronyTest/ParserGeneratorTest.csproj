@@ -97,8 +97,10 @@
     <Content Include="Views\Calculator\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\ParserRegistration.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CalculatorController.cs" />
+    <Compile Include="Models\AvailableParserRepository.cs" />
     <Compile Include="Models\ExpressionDTO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -18,6 +18,16 @@ namespace IronyParser
             parser = new IronyGrammarParser(grammar);
         }
 
+        public string Name
+        {
+            get { return "Irony Parser"; }
+        }
+
+        public Guid Id
+        {
+            get { return new Guid("6CF1AB86-BFB4-4510-B5B4-D7FB68E7ECDF"); }
+        }
+
         public BaseAST Parse(string code)
         {
             var tree = parser.Parse(code);

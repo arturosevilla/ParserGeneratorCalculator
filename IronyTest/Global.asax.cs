@@ -13,6 +13,7 @@ namespace ParserGeneratorTest
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            ParserRegistration.RegisterParsers();
         }
     }
 }

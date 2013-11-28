@@ -13,13 +13,19 @@ namespace ParserGeneratorTest.Controllers
         // GET: /Calculator/
         public ActionResult Index()
         {
+            var parsers = new AvailableParserRepository().GetAllParsers();
+            ViewData["parsers"] = from parser in parsers
+                                  select new SelectListItem {
+                                      Text = parser.Name,
+                                      Value = parser.Id.ToString()
+                                  };
             return View();
         }
 
         [HttpPost]
-        public ActionResult ParseAndEvaluate(string expression)
+        public ActionResult ParseAndEvaluate(string expression, string parser)
         {
-            var calculator = new ExpressionEvaluator(expression);
+            var calculator = new ExpressionEvaluator(expression, new Guid(parser));
             try {
                 var opResult = calculator.Evaluate();
                 string result;

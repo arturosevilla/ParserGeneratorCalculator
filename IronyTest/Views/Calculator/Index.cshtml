@@ -6,6 +6,7 @@
 <h2>Parser test</h2>
 
 <form>
+    <label for="parser">Parser: </label> @Html.DropDownList("parser", ViewData["parsers"] as IEnumerable<SelectListItem>) <br />
     <label for="txtExpression">Expresi&oacute;n: </label><br />
     <textarea id="txtExpression" name="txtExpression" rows="15" cols="50"></textarea>
     <input type="button" id="btnSubmit" value="Calcular" /><br />
@@ -17,12 +18,13 @@
 <script type="text/javascript">
     $(function () {
         $('#btnSubmit').click(function () {
+            var parserId = $('#parser').val();
             $.ajax({
                 url: '@Url.Action("ParseAndEvaluate", "Calculator")',
                 type: 'POST',
                 dataType: 'json',
                 contentType: 'application/json',
-                data: JSON.stringify({ expression: $.trim($('#txtExpression').val()) }),
+                data: JSON.stringify({ expression: $.trim($('#txtExpression').val()), parser: parserId }),
                 processData: false,
                 success: function (result) {
                     if (result.Success) {
