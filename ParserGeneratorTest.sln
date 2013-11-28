@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParserGeneratorTest", "IronyTest\ParserGeneratorTest.csproj", "{BE89D1C0-4231-4D42-9D45-BDB5C92CA2A4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParserGeneratorTest", "ParserGeneratorTest\ParserGeneratorTest.csproj", "{BE89D1C0-4231-4D42-9D45-BDB5C92CA2A4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "010.Irony.2012", "Irony\010.Irony.2012.csproj", "{D81F5C91-D7DB-46E5-BC99-49488FB6814C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IronyParser", "IronyGrammar\IronyParser.csproj", "{FC6714FE-81B0-4DC1-9A90-973D9070862C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IronyParser", "IronyParser\IronyParser.csproj", "{FC6714FE-81B0-4DC1-9A90-973D9070862C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvaluationGrammar", "EvaluationGrammar\EvaluationGrammar.csproj", "{81CEF36E-D3E1-4E69-AABC-ED024935D2FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AntlrParser", "AntlrGrammar\AntlrParser.csproj", "{2FDDF180-CA13-4681-80ED-5BD109A7FD70}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AntlrParser", "AntlrParser\AntlrParser.csproj", "{2FDDF180-CA13-4681-80ED-5BD109A7FD70}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
