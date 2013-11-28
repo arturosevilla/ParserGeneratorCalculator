@@ -1,5 +1,7 @@
 *.exe
 *.dll
+!AntlrParser/AntlrTool/*
+!AntlrParser/AntlrTool/Targets/*
 [Bb]in/
 [Oo]bj/
 *.suo
