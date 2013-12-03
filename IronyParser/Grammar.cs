@@ -41,6 +41,7 @@ namespace IronyParser
             var Instruction = new NonTerminal("Instruction");
             var BoolExpr = new NonTerminal("BooleanExpression", typeof(BooleanExpression));
             var GeneralStatement = new NonTerminal("GeneralStatement");
+            var WhileExpression = new NonTerminal("WhileExpression", typeof(WhileExpression));
 
             // Grammar definition
             Expr.Rule = BinExpr | number | ParExpr | identifier;
@@ -56,7 +57,8 @@ namespace IronyParser
             IfExprWOElse.Rule = ToTerm("if") + "(" + BoolExpr + ")" + "{" + Block + "}";
             Statement.Rule = Assignment | Declaration | Initialization | IfExpr;
             Instruction.Rule = Statement + ";";
-            GeneralStatement.Rule = Instruction | IfExpr;
+            WhileExpression.Rule = ToTerm("while") + "(" + BoolExpr + ")" + "{" + Block + "}";
+            GeneralStatement.Rule = Instruction | IfExpr | WhileExpression;
             Block.Rule = MakeStarRule(Block, GeneralStatement);
 
             RegisterOperators(1, "+", "-");
@@ -66,7 +68,7 @@ namespace IronyParser
             RegisterBracePair("{", "}");
 
             MarkTransient(binop, relop, ParExpr, IfExpr, Instruction, Statement, Expr, GeneralStatement);
-            MarkReservedWords("int", "if", "else");
+            MarkReservedWords("int", "if", "else", "while");
 
             Root = Block;
             LanguageFlags = LanguageFlags.CreateAst | LanguageFlags.NewLineBeforeEOF;

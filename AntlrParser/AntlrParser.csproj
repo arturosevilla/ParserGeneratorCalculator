@@ -52,6 +52,7 @@
     <Compile Include="AST\IfStatement.cs" />
     <Compile Include="AST\InitializationStatement.cs" />
     <Compile Include="AST\NumberExpression.cs" />
+    <Compile Include="AST\WhileExpression.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

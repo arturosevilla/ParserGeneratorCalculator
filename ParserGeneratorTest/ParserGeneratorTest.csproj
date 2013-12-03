@@ -122,7 +122,7 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AntlrGrammar\AntlrParser.csproj">
+    <ProjectReference Include="..\AntlrParser\AntlrParser.csproj">
       <Project>{2fddf180-ca13-4681-80ed-5bd109a7fd70}</Project>
       <Name>AntlrParser</Name>
     </ProjectReference>
@@ -130,7 +130,7 @@
       <Project>{81cef36e-d3e1-4e69-aabc-ed024935d2fd}</Project>
       <Name>EvaluationGrammar</Name>
     </ProjectReference>
-    <ProjectReference Include="..\IronyGrammar\IronyParser.csproj">
+    <ProjectReference Include="..\IronyParser\IronyParser.csproj">
       <Project>{fc6714fe-81b0-4dc1-9a90-973d9070862c}</Project>
       <Name>IronyParser</Name>
     </ProjectReference>

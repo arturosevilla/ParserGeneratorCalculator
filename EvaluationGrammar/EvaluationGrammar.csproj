@@ -44,6 +44,7 @@
     <Compile Include="AST\BaseBinaryExpression.cs" />
     <Compile Include="AST\BaseBooleanExpression.cs" />
     <Compile Include="AST\BaseDeclarationStatement.cs" />
+    <Compile Include="AST\BaseWhileExpression.cs" />
     <Compile Include="AST\Expression.cs" />
     <Compile Include="AST\BaseIdentifierExpression.cs" />
     <Compile Include="AST\BaseIfStatement.cs" />

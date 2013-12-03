@@ -12,6 +12,7 @@ tokens {
 	DECLARATION;
 	INITIALIZATION;
 	IF;
+	WHILE;
 	IFELSE;
 	BLOCK;
 } 
@@ -32,7 +33,7 @@ block
 	;
 
 generalStatement
-	: instruction | ifExpression
+	: instruction | ifExpression | whileExpression
 	;
 
 instruction
@@ -48,6 +49,10 @@ ifExpression
 	( 'else' '{' s2=block '}' -> ^(IFELSE booleanExpression $s1 $s2)
 	  |                       -> ^(IF booleanExpression $s1)
 	)
+	;
+
+whileExpression
+	: 'while' '(' booleanExpression ')' '{' s1=block '}' -> ^(WHILE booleanExpression $s1)
 	;
 
 assignment

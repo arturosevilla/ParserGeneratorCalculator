@@ -48,6 +48,7 @@
     <Compile Include="AST\InitializationStatement.cs" />
     <Compile Include="AST\NumberExpression.cs" />
     <Compile Include="AST\StatementList.cs" />
+    <Compile Include="AST\WhileExpression.cs" />
     <Compile Include="Grammar.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -31,6 +31,7 @@ exp returns [BaseAST e]
 	| ^(IDENTIFIER id=Id) { e = new IdentifierExpression($id.text); }
 	| ^(DECLARATION id=Id) { e = new DeclarationStatement($id.text); }
 	| ^(INITIALIZATION ini=exp val=exp) { e = new InitializationStatement($ini.e, $val.e); }
+	| ^(WHILE condition=exp code=exp) { e = new WhileExpression($condition.e, $code.e); }
 	| values=blockStatements { e = new BlockStatement($values.sts); }
 	;
 
